@@ -35,8 +35,8 @@ char[] charArray1 = a1.toCharArray();
 String b1 = stringArr[1];
 char[] charArray2 = b1.toCharArray();
 
-double a = charArray1[2];
-double b = charArray2[2];
+double a = (double) charArray1[2];
+double b = (double) charArray2[2];
 
 double result = Math.pow(a, b);
 
