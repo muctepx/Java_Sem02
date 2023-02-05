@@ -28,10 +28,22 @@ public class HW02 {
         reader.close();
         
         String a1 = stringArr[0];
-        double x = Character.getNumericValue(a1.charAt(2));
+        String[] subStr1;
+        String delimeter = " ";
+        subStr1 = a1.split(delimeter);
+        for(int i = 0; i < subStr1.length; i++) { 
+           System.out.println(subStr1[i]); 
+        }
+        double x = Double.parseDouble(subStr1[1]);
 
         String b1 = stringArr[1];
-        double y = Character.getNumericValue(b1.charAt(2));
+        String[] subStr2;
+        String delimeter2 = " ";
+        subStr2 = b1.split(delimeter2);
+        for(int i = 0; i < subStr2.length; i++) { 
+           System.out.println(subStr2[i]); 
+        }
+        double y = Double.parseDouble(subStr2[1]);
 
         System.out.println("Число а = " + x);
         System.out.println("Число b = " + y);
