@@ -13,7 +13,6 @@
 import java.io.*;
 import java.lang.Math;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class HW02 {
     public static void main(String args[]) throws Exception {
