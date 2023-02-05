@@ -1,4 +1,4 @@
-// +Реализовать функцию возведения числа а в степень b. a, b ∈ Z. Сводя количество выполняемых действий к минимуму. 
+// Реализовать функцию возведения числа а в степень b. a, b ∈ Z. Сводя количество выполняемых действий к минимуму. 
 // Пример 1: а = 3, b = 2, ответ: 9 
 // Пример 2: а = 2, b = -2, ответ: 0.25
 // Пример 3: а = 3, b = 0, ответ: 1
@@ -16,39 +16,44 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class HW02 {
+    public static void main(String args[]) throws Exception {
+        BufferedReader reader = new BufferedReader(new FileReader("input.txt"));
+        String str;
+        ArrayList<String> list = new ArrayList<String>();
+        while ((str = reader.readLine()) != null) {
+            if (!str.isEmpty()) {
+                list.add(str);
+            }
+        }
+        String[] stringArr = list.toArray(new String[0]);
+        //System.out.println(Arrays.toString(stringArr));
+        reader.close();
+        
+        //System.out.println(stringArr[0]);
+        //System.out.println(stringArr[1]);
 
-    public static void main(String args[]) throws Exception {  
-BufferedReader reader = new BufferedReader(new FileReader("input.txt"));
-String str;
-ArrayList<String> list = new ArrayList<String>();
-while((str = reader.readLine()) != null ){
-    if(!str.isEmpty()){
-    list.add(str);
-}}
-String[] stringArr = list.toArray(new String[0]);
-System.out.println(Arrays.toString(stringArr));
-reader.close();
+        String a1 = stringArr[0];
+        double x = Character.getNumericValue(a1.charAt(2));
 
-String a1 = stringArr[0];
-char[] charArray1 = a1.toCharArray();
+        String b1 = stringArr[1];
+        double y = Character.getNumericValue(b1.charAt(2));
 
-String b1 = stringArr[1];
-char[] charArray2 = b1.toCharArray();
+        System.out.println("Число а = " + x);
+        System.out.println("Число b = " + y);
 
-double a = (double) charArray1[2];
-double b = (double) charArray2[2];
+        double result = Math.pow(x, y);
+        System.out.println("a в степени b = " + result);;
 
-double result = Math.pow(a, b);
-
-File file = new File("output.txt");
-try {
-PrintWriter printWriter = new PrintWriter(file);
-if (a == 0 | b == 0)
-printWriter.println("не оперделено");
-else
-printWriter.println(result);
-printWriter.close();
-} catch (FileNotFoundException ex) {
-System.out.println(result);
+        File file = new File("output.txt");
+        try {
+            PrintWriter printWriter = new PrintWriter(file);
+            if (x == 0 | y == 0)
+                printWriter.println("не оперделено");
+            else
+                printWriter.println(result);
+            printWriter.close();
+        } catch (FileNotFoundException ex) {
+            
+        }
+    }
 }
-}}
