@@ -26,12 +26,8 @@ public class HW02 {
             }
         }
         String[] stringArr = list.toArray(new String[0]);
-        //System.out.println(Arrays.toString(stringArr));
         reader.close();
         
-        //System.out.println(stringArr[0]);
-        //System.out.println(stringArr[1]);
-
         String a1 = stringArr[0];
         double x = Character.getNumericValue(a1.charAt(2));
 
